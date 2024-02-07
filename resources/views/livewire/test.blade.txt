@@ -1,0 +1,1560 @@
+<main class="pb-20 min-h-full mt-4">
+
+    <section class="px-4">
+
+        <div class="content">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <ul class="nav nav-pills p-2 list-unstyled d-flex justify-content-center">
+                        <li class="nav-item"><a class="nav-link active" href="#pumb" data-toggle="tab" onclick="filterItems(29)"><span class=" "></span>Pump</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#kitchen" data-toggle="tab" onclick="filterItems(30)"><span class=""></span> Kitchen</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#bathroom" data-toggle="tab" onclick="filterItems(31)"><span class=""></span>Bathroom</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        @foreach ($product as $item)
+        <!--<div class="product-item  shadow-lg rounded-lg mt-5 pb-4" data-valid="{{ $item->valid }}">-->
+        <!--    <div class="flex justify-between">-->
+        <!--        <p class="px-4 py-3 text-blue-700 text-sm font-bold">{{ $item->name }}</p>-->
+        <!--        <p class="bg-gradient-100 text-white text-xs p-2 rounded-tr-lg rounded-bl-lg font-semibold">-->
+        <!--            {{ $item->valid }} days-->
+        <!--        </p>-->
+        <!--    </div>-->
+        <!--    <div class="d-flex mt-2 px-3">-->
+        <!--        <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="w-30 h-36 md:w-26 md:h-30 lg:w-37 lg:h-30 xl:w-30 xl:h-42 rounded-full">-->
+        <!-- Adjust the width classes based on your desired size -->
+        <!--        <div class="font-semibold text-sm px-2 text-gray-700">-->
+        <!--            <p class="text-red-700">Vaild Period</p>-->
+        <!--            <p class="text-blue-700">Price</p>-->
+        <!--            <p class="text-blue-700 mt-2">Daily Income</p>-->
+        <!--            <p class="text-blue-700 mt-2">Total Return</p>-->
+        <!--        </div>-->
+        <!--        <div>-->
+        <!--            <p>{{ $item->valid }} days</p>-->
+        <!--            <p>₦{{ number_format($item->price) }}</p>-->
+        <!--            <p>₦{{ number_format($item->daily_income) }}</p>-->
+        <!--            <p>₦{{ number_format($item->daily_income * $item->valid) }}</p>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--    <div class="mt-3 px-5">-->
+        <!--        <a href="{{ url('buy/' . $item->id) }}"-->
+        <!--            class="h-10 rounded-full text-white d-flex w-full tracking-normal bg-gradient-100 items-center justify-center py-1-->
+        <!--            focus:ring-4 focus:outline-none outline-none focus:ring-opacity-50 mx-auto font-semibold text-sm">Buy-->
+        <!--        </a>-->
+        <!--    </div>-->
+        <!--</div>-->
+        <!--        <div class="product-item shadow-lg rounded-lg mt-5 pb-4" data-valid="{{ $item->valid }}">-->
+        <!--    <div class="flex flex-col md:flex-row justify-between items-center md:items-start">-->
+        <!--        <div class="md:w-1/3">-->
+        <!--            <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="w-full h-auto md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-60 xl:h-60 rounded-full">-->
+        <!--        </div>-->
+        <!--        <div class="font-semibold text-sm text-gray-700 md:px-4 my-3 md:my-0">-->
+        <!--            <p class="text-red-700">-->
+        <!--                Valid Period: -->
+        <!--                <span class="blink">{{ $item->valid }} days</span>-->
+        <!--            </p>-->
+        <!--            <p class="text-blue-700">Price: ₦{{ number_format($item->price) }}</p>-->
+        <!--            <p class="text-blue-700 mt-2">Daily Income: ₦{{ number_format($item->daily_income) }}</p>-->
+        <!--            <p class="text-blue-700 mt-2">Total Return: ₦{{ number_format($item->daily_income * $item->valid) }}</p>-->
+        <!--        </div>-->
+        <!--<div class="mt-3 px-5">-->
+        <!--    <a href="{{ url('buy/' . $item->id) }}" class="h-50 rounded-full text-white flex w-full tracking-normal  items-center justify-center py-1-->
+        <!--        focus:ring-4 focus:outline-none outline-none focus:ring-opacity-50 mx-auto font-semibold text-sm" style="background-color: #38888e;">Buy-->
+        <!--    </a>-->
+        <!--</div>-->
+
+        <!--        <div class="mt-3 px-5">-->
+        <!--            <a href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">-->
+        <!--                Buy-->
+        <!--            </a>-->
+        <!--        </div>-->
+
+        <!--    </div>-->
+        <!--</div>-->
+
+        <!--<div class="product-item shadow-lg rounded-lg mt-5 pb-4 " data-valid="{{ $item->valid }}">-->
+        <!--    <div class="flex flex-col md:flex-row justify-between items-center md:items-start">-->
+        <!--        <div class="md:w-1/3">-->
+        <!--            <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="w-full h-auto md:w-48 md:h-48 lg:w-64 lg:h-64 xl:w-60 xl:h-60 rounded-full ml-5 ">-->
+        <!--        </div>-->
+        <!--        <div class="font-semibold text-sm text-gray-700 md:px-4 my-3 md:my-0">-->
+        <!--            <p class="text-red-700">-->
+        <!--                Valid Period: -->
+        <!--                <span class="blink">{{ $item->valid }} days</span>-->
+        <!--            </p>-->
+        <!--            <p class="text-blue-700">Price: ₦{{ number_format($item->price) }}</p>-->
+        <!--            <p class="text-blue-700 mt-2">Daily Income: ₦{{ number_format($item->daily_income) }}</p>-->
+        <!--            <p class="text-blue-700 mt-2">Total Return: ₦{{ number_format($item->daily_income * $item->valid) }}</p>-->
+        <!--        </div>-->
+        <!--        <div class="mt-3 md:mt-0 md:px-5">-->
+        <!--            <a href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">-->
+        <!--                Buy-->
+        <!--            </a>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+        <!--<div class="content">-->
+        <!--        <div class="container-fluid">-->
+        <!--            <div class="row">-->
+        <!--                <div class="col-lg-12 ">-->
+        <!--                    <div class="card card-primary card-outline">-->
+        <!--                        <div class="card-body ">-->
+        <!--                            <div class="product-item shadow-lg rounded-lg mt-5 pb-4" data-valid="{{ $item->valid }}">-->
+        <!--    <div class="col-md-12 justify-between items-center md:items-start">-->
+        <!--        <div class="col-md-4">-->
+        <!--            <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="w-full h-48 md:w-40 md:h-40 lg:w-54 lg:h-54 xl:w-50 xl:h-50 rounded-full ">-->
+        <!-- Adjust the height (e.g., h-48) based on your desired fixed height -->
+        <!--        </div>-->
+        <!--<div class="font-semibold text-sm text-gray-700 md:px-4 my-3 md:my-0">-->
+
+        <!--        <div class="row col-md-6 ">-->
+        <!--            <div class="col-5">-->
+        <!--                <p class="text-red-700">-->
+        <!--                    Valid Period: -->
+
+        <!--                </p>-->
+        <!--                <p class="text-blue-700">Price:</p>-->
+        <!--                <p class="text-blue-700 mt-2">Daily Income: </p>-->
+        <!--                <p class="text-blue-700 mt-2">Total Return: </p>-->
+        <!--            </div>-->
+        <!--            <div>-->
+        <!--             <span class="blink">{{ $item->valid }} days</span>-->
+        <!--             <p> ₦{{ number_format($item->price) }}</p>-->
+        <!--             <p>₦{{ number_format($item->daily_income) }}</p>-->
+        <!--             <p>₦{{ number_format($item->daily_income * $item->valid) }}</p>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--        <div class="col-2 mt-3 md:mt-2 md:px-5 mr-5">-->
+        <!--            <a href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">-->
+        <!--                Buy-->
+        <!--            </a>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </div>    -->
+
+        <!--<div class="content">-->
+        <!--    <div class="container-fluid">-->
+        <!--        <div class="row">-->
+        <!--            <div class="col-lg-12">-->
+        <!--                <div class="card card-primary card-outline">-->
+        <!--                    <div class="card-body">-->
+        <!--<div class="product-item shadow-lg rounded-lg mt-5 pb-4" data-valid="{{ $item->valid }}">-->
+        <!--                            <div class="row align-items-center mt-3 py-3">-->
+        <!--                                <div class="col-md-4">-->
+        <!--                                    <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="w-full h-auto md:w-40 md:h-40 lg:w-54 lg:h-54 xl:w-50 xl:h-50 rounded-full">-->
+        <!--                                </div>-->
+        <!--                                <div class="col-md-6">-->
+        <!--                                    <div class="row">-->
+        <!--                                        <div class="col-5">-->
+        <!--                                            <p class="text-red-700">Valid Period:</p>-->
+        <!--                                            <p class="text-blue-700">Price:</p>-->
+        <!--                                            <p class="text-blue-700 mt-2">Daily Income:</p>-->
+        <!--                                            <p class="text-blue-700 mt-2">Total Return:</p>-->
+        <!--                                        </div>-->
+        <!--                                        <div class="col-7">-->
+        <!--                                            <p><span class="blink">{{ $item->valid }} days</span></p>-->
+        <!--                                            <p>₦{{ number_format($item->price) }}</p>-->
+        <!--                                            <p>₦{{ number_format($item->daily_income) }}</p>-->
+        <!--                                            <p>₦{{ number_format($item->daily_income * $item->valid) }}</p>-->
+        <!--                                        </div>-->
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                                <div class="col-md-3 mt-3 md:mt-2 md:px-2">-->
+        <!--                                    <a href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">-->
+        <!--                                        Buy-->
+        <!--                                    </a>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--</div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+
+        <!--<div class="content">-->
+        <!--    <div class="container-fluid">-->
+        <!--        <div class="row">-->
+        <!--            <div class="col-lg-12">-->
+        <!--                <div class="card card-primary card-outline">-->
+        <!--                    <div class="card-body">-->
+        <!--                        <div class="row align-items-center mt-3 py-3">-->
+        <!--                            <div class="col-md-4 col-sm-12 mb-3">-->
+        <!--                                <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="w-full h-auto md:w-40 md:h-40 lg:w-54 lg:h-54 xl:w-50 xl:h-50 rounded-full">-->
+        <!--                            </div>-->
+        <!--                            <div class="col-md-6 col-sm-12 mb-3">-->
+        <!--                                <div class="row">-->
+        <!--                                    <div class="col-5">-->
+        <!--                                        <p class="text-red-700">Valid Period:</p>-->
+        <!--                                        <p class="text-blue-700">Price:</p>-->
+        <!--                                        <p class="text-blue-700 mt-2">Daily Income:</p>-->
+        <!--                                        <p class="text-blue-700 mt-2">Total Return:</p>-->
+        <!--                                    </div>-->
+        <!--                                    <div class="col-7">-->
+        <!--                                        <p><span class="blink">{{ $item->valid }} days</span></p>-->
+        <!--                                        <p>₦{{ number_format($item->price) }}</p>-->
+        <!--                                        <p>₦{{ number_format($item->daily_income) }}</p>-->
+        <!--                                        <p>₦{{ number_format($item->daily_income * $item->valid) }}</p>-->
+        <!--                                    </div>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                            <div class="col-md-2 col-sm-12">-->
+        <!--                                <a href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">-->
+        <!--                                    Buy-->
+        <!--                                </a>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+
+        <!--<div class="container-fluid mb-3">-->
+        <!--    <div class="row">-->
+        <!--        <div class="col-xlg-12">-->
+        <!--            <div class="card card-primary card-outline">-->
+        <!--                <div class="card-body">-->
+        <!--                    <div class="row  ">-->
+        <!--                        <div class="col-sm-3">-->
+        <!--                             <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="img-fluid rounded-full">-->
+        <!--                        </div>-->
+
+        <!--                        <div class="col-md-8 col-sm-12">-->
+        <!--                            <div class="row">-->
+        <!--                                <div class="col-12">-->
+        <!--                                    <p class="text-red-700">Valid Period: <span class="blink">{{ $item->valid }} days</span></p>-->
+        <!--                                    <p class="text-blue-700">Price: ₦{{ number_format($item->price) }}</p>-->
+        <!--                                    <p class="text-blue-700 mt-2">Daily Income: ₦{{ number_format($item->daily_income) }}</p>-->
+        <!--                                    <p class="text-blue-700 mt-2">Total Return: ₦{{ number_format($item->daily_income * $item->valid) }}</p>-->
+        <!--                                </div>-->
+        <!--                                <div class="col-3 mt-3">-->
+        <!--                                    <a href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">-->
+        <!--                                        Buy-->
+        <!--                                    </a>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+
+        <!--<div class="container-fluid mb-3">-->
+        <!--    <div class="row">-->
+        <!--        <div class="col-xlg-12">-->
+        <!--            <div class="card card-primary card-outline">-->
+        <!--                <div class="card-body">-->
+        <!--                    <div class="row">-->
+        <!--                        <div class="col-sm-6 col-md-3">-->
+        <!--                            <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="img-fluid rounded-full">-->
+        <!--                        </div>-->
+
+        <!--                        <div class="col-md-6 col-sm-6">-->
+        <!--                            <div class="row">-->
+        <!--                                <div class="col-12">-->
+        <!--                                    <p class="text-red-700">Valid Period: <span class="blink">{{ $item->valid }} days</span></p>-->
+        <!--                                    <p class="text-blue-700">Price: ₦{{ number_format($item->price) }}</p>-->
+        <!--                                    <p class="text-blue-700 mt-2">Daily Income: ₦{{ number_format($item->daily_income) }}</p>-->
+        <!--                                    <p class="text-blue-700 mt-2">Total Return: ₦{{ number_format($item->daily_income * $item->valid) }}</p>-->
+        <!--                                </div>-->
+        <!--                                <div class="col-12 col-md-3 mt-3">-->
+        <!--                                    <a href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">-->
+        <!--                                        Buy-->
+        <!--                                    </a>-->
+        <!--                                </div>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+        <!--    </div>-->
+        <!--</div>-->
+
+
+
+
+
+
+        <div class="container-fluid mb-3 rounded-full">
+            <div class="row">
+                <div class="col-xlg-12">
+                    <div class="card card-primary card-outline">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-3">
+                                    <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="img-fluid rounded-full">
+                                </div>
+
+                                <div class="col-md-9 col-sm-12 mt-3 mt-md-0">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <p class="text-red-700">Valid Period: <span class="blink">{{ $item->valid }} days</span></p>
+                                            <p class="text-blue-700">Price: ₦{{ number_format($item->price) }}</p>
+                                            <p class="text-blue-700 mt-2">Daily Income: ₦{{ number_format($item->daily_income) }}</p>
+                                            <p class="text-blue-700 mt-2">Total Return: ₦{{ number_format($item->daily_income * $item->valid) }}</p>
+                                        </div>
+                                        <div class="col-12 col-md-3 mt-3">
+                                            <a href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">
+                                                Buy
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        @endforeach
+
+    </section>
+
+    <!--    <div class="content">-->
+    <!--    <div class="row">-->
+    <!--        <div class="col-md-12 col-sm-12 col-xs-12">-->
+    <!--            <ul class="nav nav-pills p-2 list-unstyled d-flex justify-content-center">-->
+    <!--                <li class="nav-item"><a class="nav-link active" data-toggle="pill" href="#pump" onclick="filterItems(29)">Pump</a></li>-->
+    <!--                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#kitchen" onclick="filterItems(30)">Kitchen</a></li>-->
+    <!--                <li class="nav-item"><a class="nav-link" data-toggle="pill" href="#bathroom" onclick="filterItems(31)">Bathroom</a></li>-->
+    <!--            </ul>-->
+    <!--        </div>    -->
+    <!--    </div>-->
+
+    <!--    <div class="tab-content mt-3">-->
+    <!--        <div id="pump" class="tab-pane fade show active">-->
+    <!--            {{ $pumpItems ?? '' }}-->
+    <!--        </div>-->
+
+    <!--        <div id="kitchen" class="tab-pane fade">-->
+    <!--            {{ $kitchenItems ?? '' }}-->
+    <!--        </div>-->
+
+    <!--        <div id="bathroom" class="tab-pane fade">-->
+    <!--            {{ $bathroomItems ?? '' }}-->
+    <!--        </div>-->
+    <!--    </div>-->
+
+    <!--</div>-->
+
+
+    <script>
+        function filterItems(valid) {
+            const items = document.querySelectorAll('.product-item');
+            items.forEach(item => {
+                const itemValid = parseInt(item.getAttribute('data-valid'));
+                item.style.display = itemValid === valid ? 'block' : 'none';
+            });
+        }
+    </script>
+
+</main>
+
+
+<!--<footer class=" h-20 w-full fixed bottom-0 left-0 right-0 shadow-xl"-->
+<!--    style="border-top-left-radius: 30px; border-top-right-radius: 30px; background-color:#5EE3EE;">-->
+<!--    <nav class="text-gray-700 h-full w-full flex justify-between items-center font-medium">-->
+
+<!--        <a href="/dashboard"-->
+<!--            class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal "-->
+<!--            style="border-top-left-radius: 30px;">-->
+
+<!--            <img src="{{ asset('static/home.png') }}" alt="" width="30">-->
+
+<!--            <span class="text-xxs">Home</span>-->
+<!--        </a>-->
+
+<!--        <a href="/product"-->
+<!--            class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal text-gradient-100 font-semibold">-->
+
+<!--            <img src="{{ asset('static/product_blue.png') }}" alt="" width="30">-->
+
+<!--            <span class="text-xxs">Product</span>-->
+<!--        </a>-->
+
+<!--        <a href="/withdraw"-->
+<!--            class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal ">-->
+
+<!--            <img src="{{ asset('static/money.png') }}" alt="" width="30">-->
+
+<!--            <span class="text-xxs">Withdraw</span>-->
+<!--        </a>-->
+
+<!--        <a href="/profile"-->
+<!--            class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal "-->
+<!--            style="border-top-right-radius: 30px;">-->
+
+<!--            <img src="{{ asset('static/user.png') }}" alt="" width="30">-->
+
+<!--            <span class="text-xxs">Profile</span>-->
+<!--        </a>-->
+
+<!--    </nav>-->
+<!--</footer>-->
+<!-- <footer class="bg-white h-20 w-full fixed bottom-0 left-0 right-0 shadow-xl"-->
+<!--    style="border-top-left-radius: 30px; border-top-right-radius: 30px; background-color:#5EE3EE;">-->
+<!--    <nav class="text-gray-700 h-full w-full flex justify-between items-center font-medium">-->
+
+<!--        <a href="{{ url('/dashboard') }}"-->
+<!--            class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal text-gradient-100 font-semibold"-->
+<!--            style="border-top-left-radius: 30px;">-->
+
+<!--            <img src="{{ asset('static/home_blue.png') }}" alt="" width="30">-->
+
+<!--            <span class="text-xxs">Home</span>-->
+<!--        </a>-->
+
+<!--        <a href="{{ url('/product') }}"-->
+<!--            class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal ">-->
+
+<!--            <img src="{{ asset('static/product.png') }}" alt="" width="30">-->
+
+<!--            <span class="text-xxs">Product</span>-->
+<!--        </a>-->
+
+<!--        <a href="{{ url('/withdraw') }}"-->
+<!--            class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal ">-->
+
+<!--            <img src="{{ asset('static/money.png') }}" alt="" width="30">-->
+
+<!--            <span class="text-xxs">Withdraw</span>-->
+<!--        </a>-->
+
+<!--        <a href="{{ url('/profile') }}"-->
+<!--            class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal "-->
+<!--            style="border-top-right-radius: 30px;">-->
+
+<!--            <img src="{{ asset('static/user.png') }}" alt="" width="30">-->
+
+<!--            <span class="text-xxs">Profile</span>-->
+<!--        </a>-->
+
+<!--    </nav>-->
+<!--</footer>-->
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card card-primary card-outline">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-sm-12 col-md-3">
+                        <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="img-fluid rounded-full">
+                    </div>
+
+                    <div class="col-md-9 col-sm-12 mt-3 mt-md-0">
+                        <div class="row">
+                            <div class="col-12">
+                                <p class="text-red-700">Valid Period: <span class="blink">{{ $item->valid }} days</span></p>
+                                <p class="text-blue-700">Price: ₦{{ number_format($item->price) }}</p>
+                                <p class="text-blue-700 mt-2">Daily Income: ₦{{ number_format($item->daily_income) }}</p>
+                                <p class="text-blue-700 mt-2">Total Return: ₦{{ number_format($item->daily_income * $item->valid) }}</p>
+                            </div>
+                            <div class="col-12 col-md-3 mt-3">
+                                <a href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">
+                                    Buy
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<?php product.php
+
+namespace App\Http\Livewire;
+
+use App\Models\User;
+use App\Models\Plan;
+use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+
+class Product extends Component
+{
+    public function getProductsByValidity($valid)
+    {
+        return Plan::where('valid', $valid)->get();
+    }
+
+    public function render()
+    {
+        $user = Auth::user();
+        $product29 = $this->getProductsByValidity(29);
+        $product30 = $this->getProductsByValidity(30);
+        $product31 = $this->getProductsByValidity(31);
+        $referralCount = User::where('referral_id', $user->id)->count();
+
+
+        return view('livewire.product', compact('product29', 'product30', 'product31', 'user'));
+    }
+    public function isPriceValid($price, $referralCount)
+    {
+        return (
+            $price <= 99000 ||
+            ($price >= 100000 && $price <= 199000 && $referralCount >= 3) ||
+            ($price >= 200000 && $price <= 399000 && $referralCount >= 5) ||
+            ($price >= 499000 && $referralCount >= 10)
+        );
+    }
+    protected $listeners = ['checkProductValidity' => 'checkProductValidity'];
+
+    public function checkProductValidity($planId)
+    {
+        $referralCount = User::where('referral_id', auth()->user()->id)->count();
+        $plan = Plan::find($planId);
+
+        $isProductValid = $this->isPriceValid($plan->price, $referralCount);
+        // dd($isProductValid);
+        if ($isProductValid) {
+            return redirect()->to('buy/' . $planId);
+        } else {
+            // Livewire event to show an alert message (you can handle this part as needed)
+            $this->dispatchBrowserEvent('showAlert', 'The product is not valid for purchase. You must have at least 10 Referrals.');
+        }
+    }
+}
+
+
+product.blade.php
+@extends('layouts.app')
+
+@section('title', 'TwF Ford DASHBOARD')
+
+@section('content')
+
+
+<!-- Add these lines to your HTML template (e.g., layout.blade.php) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+<style>
+    [x-cloak] {
+        display: none !important;
+    }
+
+    html {
+        min-height: 100%;
+        height: 100%;
+    }
+
+
+    html,
+    body {
+        max-height: 100%;
+        height: 100%;
+        font-size: 16px;
+    }
+
+    * {
+        font-family: 'Karla', sans-serif;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+        transition: background-color 600s 0s, color 600s 0s;
+    }
+
+    @keyframes blink {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .blink {
+        animation: blink 1s infinite;
+    }
+</style>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+<div class="w-full h-full min-h-full overflow-x-hidden bg-gray-100">
+
+    <div class=" text-white px-2 py-2" style="border-bottom-left-radius: 50px;  background-color:#4bb5be;">
+        <nav class="px-4 flex justify-between items-center  h-full w-full">
+            <p></p>
+            <p class="text-xl font-semibold">Product</p>
+            <img src="{{ asset('static/ref_blue.png') }}" alt="" width="30">
+        </nav>
+        <div class="flex justify-between px-4 mt-6">
+            <div>
+                <p>Hello:</p>
+                <p class="text-lg font-semibold">ID: {{ $user->phone_number }} </p>
+            </div>
+            <div>
+                <p>Balance</p>
+                <p class="text-lg font-semibold">₦{{ number_format($user->balance) }}</p>
+            </div>
+        </div>
+    </div>
+
+    <center class="mt-3">
+        <a href="https://whatsapp.com/channel/0029VaHgsFGFi8xgMr7yU82M" style="display: inline-block; padding: 10px; background-color: #4CAF50; color: #fff; font-weight: bold; text-decoration: none;">
+            <i class="fab fa-whatsapp"></i> Join Our Channel
+        </a>
+    </center>
+
+    <!-- <div class="content">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <ul class="nav nav-pills p-2 list-unstyled d-flex justify-content-center">
+                    <li class="nav-item"><a class="nav-link active" href="#pump" data-toggle="tab" ><span class=" "></span>Pump</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#kitchen" data-toggle="tab" ><span class=""></span> Kitchen</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#bathroom" data-toggle="tab" ><span class=""></span>Bathroom</a></li>
+                </ul>
+            </div>
+        </div>
+    </div> -->
+
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-xs-12">
+                <ul class="nav nav-pills p-2 list-unstyled d-flex justify-content-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="pump-tab" data-toggle="pill" href="#pump">
+                            <span class=" "></span>Pump
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="kitchen-tab" data-toggle="pill" href="#kitchen">
+                            <span class=""></span>Kitchen
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="bathroom-tab" data-toggle="pill" href="#bathroom" data-tab="31">
+                            <span class=""></span>Bathroom
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="tab-content">
+        <div class="tab-pane fade show" id="pump">
+
+
+            @foreach ($product29 as $item)
+            <div class="container-fluid mb-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card card-primary card-outline">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-3">
+                                        <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="img-fluid rounded-full">
+                                    </div>
+
+                                    <div class="col-md-9 col-sm-12 mt-3 mt-md-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="text-red-700">Valid Period: <span class="blink">{{ $item->valid }} days</span></p>
+                                                <p class="text-blue-700">Price: ₦{{ number_format($item->price) }}</p>
+                                                <p class="text-blue-700 mt-2">Daily Income: ₦{{ number_format($item->daily_income) }}</p>
+                                                <p class="text-blue-700 mt-2">Total Return: ₦{{ number_format($item->daily_income * $item->valid) }}</p>
+                                            </div>
+                                            <div class="col-12 col-md-3 mb-5    ">
+                                                <!-- <a id="buyButton" href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">
+                                                    Buy
+                                                </a> -->
+                                                <!-- @php
+                                                $price = $item->price;
+                                                @endphp
+
+                                                @if ($price <= 99000 || ($price>= 100000 && $price <= 199000 && $referralCount>= 3) || ($price >= 200000 && $price <= 399000 && $referralCount>= 5) || ($price >= 499000 && $referralCount >= 10))
+                                                            <a id="buyButton" href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">
+                                                                Buy
+                                                            </a>
+                                                            @else
+                                                            <button class="btn btn-warning btn-lg rounded-full" onclick="showAlert()">Buy</button>
+                                                            @endif -->
+                                                @if ($isPriceValid)
+                                                <a id="buyButton" href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">
+                                                    Buy
+                                                </a>
+                                                @else
+                                                <button class="btn btn-warning btn-lg rounded-full" onclick="showAlert()">Buy</button>
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            @endforeach
+        </div>
+
+
+        <div class="tab-pane fade" id="kitchen">
+            @foreach ($product30 as $item)
+            <div class="container-fluid mb-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card card-primary card-outline">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-3">
+                                        <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="img-fluid rounded-full">
+                                    </div>
+
+                                    <div class="col-md-9 col-sm-12 mt-3 mt-md-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="text-red-700">Valid Period: <span class="blink">{{ $item->valid }} days</span></p>
+                                                <p class="text-blue-700">Price: ₦{{ number_format($item->price) }}</p>
+                                                <p class="text-blue-700 mt-2">Daily Income: ₦{{ number_format($item->daily_income) }}</p>
+                                                <p class="text-blue-700 mt-2">Total Return: ₦{{ number_format($item->daily_income * $item->valid) }}</p>
+                                            </div>
+                                            <div class="col-12 col-md-3 mt-3">
+                                                <a id="buyButton" href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">
+                                                    Buy
+                                                </a>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+
+        <div class="tab-pane fade" id="bathroom">
+            @foreach ($product31 as $item)
+            <div class="container-fluid mb-3">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card card-primary card-outline">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-3">
+
+
+
+                                        <img src="{{ asset('uploads/plan/' . $item->image) }}" alt="" class="img-fluid rounded-full">
+
+
+
+                                    </div>
+
+                                    <div class="col-md-9 col-sm-12 mt-3 mt-md-0">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <p class="text-red-700">Valid Period: <span class="blink">{{ $item->valid }} days</span></p>
+                                                <p class="text-blue-700">Price: ₦{{ number_format($item->price) }}</p>
+                                                <p class="text-blue-700 mt-2">Daily Income: ₦{{ number_format($item->daily_income) }}</p>
+                                                <p class="text-blue-700 mt-2">Total Return: ₦{{ number_format($item->daily_income * $item->valid) }}</p>
+                                            </div>
+                                            <div class="col-12 col-md-3 mt-1 mb-5">
+                                                @php
+                                                $user = Auth::user();
+                                                $referralId = $user->referral_id;
+                                                $referralCount = User::where('referral_id', $referralId)->count();
+
+                                                // Get the product price using your Product model (replace 'Product' with your actual model name)
+                                                $price = App\Models\Product::find($item->id)->price;
+
+                                                // Check if the price is valid
+                                                $isPriceValid = (new App\Models\Product())->isPriceValid($price, $referralCount);
+                                                @endphp
+                                                <!-- <a id="buyButton" href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full buyButton">
+                                                    Buy
+                                                </a> -->
+                                                <!-- @php
+                                                $price = $item->price;
+                                                @endphp
+
+                                                @if ($price <= 99000 || ($price>= 100000 && $price <= 199000 && $referralCount>= 3) || ($price >= 200000 && $price <= 399000 && $referralCount>= 5) || ($price >= 499000 && $referralCount >= 10))
+                                                            <a id="buyButton" href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">
+                                                                Buy
+                                                            </a>
+                                                            @else
+                                                            <button class="btn btn-warning btn-lg rounded-full" onclick="showAlert()">Buy</button>
+                                                            @endif @if ($isPriceValid)
+                                                            <a id="buyButton" href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full">
+                                                                Buy
+                                                            </a>
+                                                            @else
+                                                            <button class="btn btn-warning btn-lg rounded-full" onclick="showAlert()">Buy</button>
+                                                            @endif -->
+                                                <!-- @php
+                                                $price = $item->price;
+                                                @endphp
+
+                                                <a wire:click.prevent="checkProductValidity('{{ $item->id }}')" wire:loading.attr="disabled" href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full buyButton">
+                                                    Buy
+                                                </a> -->
+                                                @php
+                                                $price = $item->price;
+                                                @endphp
+
+                                                <a wire:click.prevent="checkProductValidity('{{ $item->id }}')" wire:loading.attr="disabled" href="{{ url('buy/' . $item->id) }}" class="btn btn-warning btn-lg rounded-full buyButton">
+                                                    Buy
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+
+
+    </div>
+
+
+
+
+
+    <footer class=" h-20 w-full fixed bottom-0 left-0 right-0 shadow-xl mt-5" style="border-top-left-radius: 30px; border-top-right-radius: 30px; background-color:#5EE3EE;">
+        <nav class="text-gray-700 h-full w-full flex justify-between items-center font-medium">
+
+            <a href="/dashboard" class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal " style="border-top-left-radius: 30px;">
+
+                <img src="{{ asset('static/home.png') }}" alt="" width="30">
+
+                <span class="text-xxs">Home</span>
+            </a>
+
+            <a href="/product" class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal ">
+
+                <img src="{{ asset('static/product.png') }}" alt="" width="30">
+
+                <span class="text-xxs">Product</span>
+            </a>
+
+            <a href="/withdraw" class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal ">
+
+                <img src="{{ asset('static/money.png') }}" alt="" width="30">
+
+                <span class="text-xxs">Withdraw</span>
+            </a>
+
+            <a href="/profile" class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal text-gradient-100 font-semibold" style="border-top-right-radius: 30px;">
+
+                <img src="{{ asset('static/user_blue.png') }}" alt="" width="30">
+
+                <span class="text-xxs">Profile</span>
+            </a>
+
+        </nav>
+    </footer>
+    <!-- Add these script tags to your HTML file if not already included -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+
+    <script>
+        const clipboard = new ClipboardJS('.clip')
+        clipboard.on('success', () => {
+            alert('Your referral link has been copied to the clipboard')
+        })
+
+
+        function filterItems(tabIndex) {
+            const tabs = document.querySelectorAll('.nav-link');
+            tabs.forEach((tab, index) => {
+                const tabId = tab.getAttribute('data-tab');
+                const tabPane = document.getElementById(tabId);
+
+                if (index == tabIndex) {
+                    tab.classList.add('active');
+                    tabPane.classList.add('show', 'active');
+                } else {
+                    tab.classList.remove('active');
+                    tabPane.classList.remove('show', 'active');
+                }
+            });
+        }
+    </script>
+    @php
+    $csrf_token = csrf_token();
+    @endphp
+
+    <script>
+        document.addEventListener('livewire:load', function() {
+            document.querySelectorAll('.buyButton').forEach(function(button) {
+                button.addEventListener('click', function(event) {
+                    event.preventDefault();
+
+                    // Alpine.js directive to check if the button is disabled (during loading)
+                    if (event.target.hasAttribute('disabled')) {
+                        return;
+                    }
+
+                    // Get the plan ID from the data attribute
+                    var planId = event.target.getAttribute('wire:click').match(/\(([^)]+)\)/)[1];
+
+                    // Make an asynchronous request to check level3_referral_id and product price
+                    Livewire.emit('checkProductValidity', planId);
+                });
+            });
+        });
+
+        function showAlert() {
+            alert('Your referral count is not sufficient for this purchase.');
+        }
+    </script>
+
+
+</div>
+
+<script>
+    feather.replace()
+</script>
+
+<!-- <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> -->
+
+@endsection
+
+
+Homecoontroller.php
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\User;
+use App\Models\Plan;
+use App\Models\Purchased_plan;
+use Illuminate\Http\Request;
+use App\Models\Referral_bonus;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+
+class HomeController extends Controller
+{
+
+    public function downline(int $id )
+    {
+        $downline = Referral_bonus::where('user_id', auth()->user()->id)->where('level', $id)->get();
+        return view('livewire.downlines', compact('downline', 'id'));
+    }
+
+
+
+
+    public function payment(int $id)
+    {
+        $user = Auth::user();
+        $plan = Plan::where('id', $id)->first();
+        return view('livewire.payment', compact('plan', 'user'));
+    }
+
+    public function storepayment(Request $request)
+    {
+        if (Auth::check()) {
+
+            $user = Auth::user();
+            $plan = Plan::where('id', $request->plan_id)->first();
+            $expire_date = Carbon::now()->addDay(30);
+            $start_date = Carbon::now();
+
+            if($plan)
+            {
+
+                if ($request->hasFile('proof')) {
+                    $image          = $request->file('proof');
+                    $newImageName   = sha1(time()).'.'.$image->getClientOriginalExtension();
+                    $location       = public_path('uploads/plan/');
+                    $image->move($location, $newImageName);
+
+                    Purchased_plan::create([
+                    'user_id' => auth()->user()->id,
+                    'plan_id' => $plan->id,
+                    'daily_income' => $plan->daily_income,
+                    'price' => $plan->price,
+                    'status' => 'pending',
+                    'start_date' => $start_date,
+                    'end_date' => $expire_date,
+                    'proof' => $newImageName,
+                    'bank' => $request->bank,
+                    'account_no' => $request->account_no,
+                    'account_name' => $request->account_name
+
+
+                ]);
+                }
+
+
+
+
+                return redirect('/deposits');
+            }
+
+
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+from walletINdex.php
+
+    //     protected function calculateDailyIncome()
+    //     {
+    //         if ($this->product) {
+    //             // Calculate daily income based on the specific product
+    //             $productPrice = $this->product->price;
+    //             $dailyIncome = ($productPrice * 0.4) / $this->product->vaild;
+
+    //             $this->dailyIncome = $dailyIncome;
+    //         } else {
+    //             // Handle the case where the product is not found
+    //             $this->dailyIncome = 0;
+    //         }
+    //     }
+
+    // protected function calculateDailyIncome()
+    // {
+    //     // Fetch the latest purchased plan for the user
+    //     $latestPurchasedPlan = Purchased_plan::where('user_id', $this->user->id)
+    //         ->orderBy('created_at', 'desc')
+    //         ->first();
+
+    //     if ($latestPurchasedPlan) {
+    //         // Fetch the corresponding product details from the plans table
+    //         $this->product = Plan::find($latestPurchasedPlan->plan_id);
+
+    //         // Calculate daily income based on the specific product
+    //         $productPrice = $this->product->price;
+    //         $dailyIncome = ($productPrice * 0.4) / $this->product->vaild;
+
+    //         $this->dailyIncome = $dailyIncome;
+    //     } else {
+    //         // Handle the case where no purchased plan is found
+    //         $this->dailyIncome = 0;
+    //     }
+    // }
+
+
+
+///////////
+<?php
+
+namespace App\Http\Livewire;
+
+use Livewire\Component;
+use App\Models\Transaction;
+use App\Models\Withdrawal;
+use App\Models\Plan;
+use App\Models\Purchased_plan;
+use Illuminate\Support\Facades\Redirect;
+
+
+class WalletIndex extends Component
+{
+    public $wallet;
+    public $withdrawals;
+    public $user;
+    public $product;
+    public $dailyIncome;
+    public $transactions;
+
+    public function mount()
+    {
+        // Fetch user's wallet details
+        $this->wallet = auth()->user()->wallet;
+        $this->user = auth()->user(); // Fetch user data
+        $this->withdrawals = Withdrawal::where('user_id', $this->user->id)->get();
+        // // Fetch the specific product associated with the user
+        // $this->product = Plan::where('user_id',$this->user->id)
+        // ->whereColumn('product', $this->$plan->price,'vaild')
+        // ->first();
+
+        // Calculate daily income
+        $this->calculateDailyIncome();
+
+        $this->transactions = Transaction::where('user_id', $this->user->id)
+        ->orderBy('created_at', 'desc')
+            ->take(10) // Change this to the number of recent transactions you want to display
+            ->get();
+        dd($this->transactions);
+    }
+    public function render()
+    {
+        return view('livewire.wallet.wallet-index', [
+            'wallet' => $this->wallet,
+            'withdrawals' => $this->withdrawals,
+            'dailyIncome' => $this->dailyIncome,
+            'transactions' => $this->transactions,
+        ]);
+    }
+
+
+    // In your Livewire component
+    protected $listeners = ['redirectWithdraw' => 'redirectToWithdraw'];
+
+    public function redirectToWithdraw()
+    {
+        // Your withdrawal logic here
+        // This method will be called when the Livewire event is triggered
+        // You can add your withdrawal logic here if needed
+
+        // Redirect to the 'Withdraw' component
+        return redirect()->to('/withdraw')->with(['user' => $this->user, 'withdrawal' => $this->withdrawals]);
+    }
+
+    //
+//    protected function calculateDailyIncome()
+    //     {
+    //         if ($this->product) {
+    //             // Calculate daily income based on the specific product
+    //             $productPrice = $this->product->price;
+    //             $dailyIncome = ($productPrice * 0.4) / $this->product->vaild;
+
+    //             $this->dailyIncome = $dailyIncome;
+    //         } else {
+    //             // Handle the case where the product is not found
+    //             $this->dailyIncome = 0;
+    //         }
+    //     }
+
+    protected function calculateDailyIncome()
+    {
+        // Fetch the latest purchased plan for the user
+        $latestPurchasedPlan = Purchased_plan::where('user_id', $this->user->id)
+            ->orderBy('created_at', 'desc')
+            ->first();
+
+        if ($latestPurchasedPlan) {
+            // Fetch the corresponding product details from the plans table
+            $this->product = Plan::find($latestPurchasedPlan->plan_id);
+
+            // Calculate daily income based on the specific product
+            $productPrice = $this->product->price;
+            $dailyIncome = ($productPrice * 0.4) / $this->product->vaild;
+
+            $this->dailyIncome = $dailyIncome;
+        } else {
+            // Handle the case where no purchased plan is found
+            $this->dailyIncome = 0;
+        }
+    }
+
+}
+
+
+
+
+wallet blade
+@extends('layouts.app')
+@livewire('wallet-index')
+
+@section('title', 'TwF Ford DASHBOARD')
+
+@section('content')
+
+27738500698
+
+<style>
+    [x-cloak] {
+        display: none !important;
+    }
+
+    html {
+        min-height: 100%;
+        height: 100%;
+    }
+
+
+    html,
+    body {
+        max-height: 100%;
+        height: 100%;
+        font-size: 16px;
+    }
+
+    * {
+        font-family: 'Karla', sans-serif;
+    }
+
+    input:-webkit-autofill,
+    input:-webkit-autofill:focus {
+        transition: background-color 600000s 0s, color 600000s 0s;
+    }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+<div class="w-full h-full min-h-full overflow-x-hidden bg-gray-100">
+
+    <div class=" text-white px-2 py-2" style="border-bottom-left-radius: 50px;  background-color:#4bb5be;">
+        <nav class="px-4 flex justify-between items-center  h-full w-full">
+            <p></p>
+            <p class="text-xl font-semibold">Product</p>
+            <img src="{{ asset('static/ref_blue.png') }}" alt="" width="30">
+        </nav>
+        <div class="flex justify-between px-4 mt-6">
+            <div>
+                <p>Hello:</p>
+
+            </div>
+            <div>
+                <p>Balance</p>
+
+            </div>
+        </div>
+    </div>
+    <center> <a href="https://whatsapp.com/channel/0029VaHgsFGFi8xgMr7yU82M" style="display: inline-block; padding: 10px; background-color: #4CAF50; color: #fff; font-weight: bold; text-decoration: none;"> Join Our Channel</a> </center>
+    <!-- <main class="pb-20 min-h-full  " style="background-color: aliceblue;"> -->
+    <div class="container-fluid card mt-3 d-flex mb-5" style="background-color: aliceblue;">
+        <!-- <div class="container-fluid "> -->
+        <!-- <h2>Your Wallet</h2> -->
+
+        @if (session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
+
+
+        <div class="container-fluid mt-5 align-self-center d-flex">
+            <!--row-->
+            <div class="row ">
+                <!--col-lg-12-->
+                <div class="col-lg-12 ">
+                    <!--c-chart-wrapper-->
+                    <div class="row">
+                        <div class="col-lg-6 col-sm-12 align-items-center">
+                            <!-- small card -->
+                            <div class="small-box bg-info p-3" style="border-radius: 5px;  background-color:#4bb5be;">
+                                <div class="inner">
+                                    <h4>Balance</h4>
+                                    <div class="icon">
+                                        <i class="fas fa-wallet"></i>₦{{ number_format(auth()->user()->wallet->balance, 2) }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12col-sm-12 mt-4 d-flex align-self-center">
+                            <!-- small card -->
+                            <div class=" row col-md-12 d-flex small-box bg-white p-3" style="border-radius: 5px;  background-color:#4bb5be;">
+                                <div class="inner col-md-6 mb-4 p-2 flex-fill">
+                                    <h4>Daily Income</h4>
+                                    <div class="icon">
+
+                                        <i class="fas fa-wallet"></i>₦{{ number_format(auth()->user()->earn, 2) }}
+                                    </div>
+                                </div>
+                                <div class="inner col-md-6 p-2 flex-fill">
+                                    <h4>Availiable Income</h4>
+                                    <div class="icon">
+                                        <i class="fas fa-wallet"></i>₦{{ number_format(auth()->user()->wallet->balance, 2) }}
+                                    </div>
+                                </div>
+                                <div class="col-6 items-center"> <button class="btn btn-danger"> Recieve </button></div>
+
+                            </div>
+
+
+                        </div>
+                        <div class="card mt-4">
+                            <div class="card-header rounded-full">
+
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title">Recent Transactions</h5>
+                                <!-- @php
+                                @dump($transactions)
+                                @endphp -->
+
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Date</th>
+                                            <th>Amount</th>
+                                            <th>Type</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <!-- @if($transactions->isNotEmpty())
+                                        {{-- Display transactions --}}
+                                        @foreach($transactions as $transaction)
+                                        {{-- Your transaction display logic --}}
+                                        @endforeach
+                                        @else
+                                        {{-- Display a message when there are no transactions --}}
+                                        <p>No transactions available.</p>
+                                        @endif -->
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row mb-5">
+                            <div class="mt-2 col-6">
+                                <form method="post">
+                                    @csrf
+                                    <button type="s" class="btn btn-success">Deposit Funds</button>
+                                </form>
+                            </div>
+
+                            <div class="mt-2 mb-5 col-12">
+                                <button id="withdrawFundsBtn" class="btn btn-danger">Withdraw Funds</button>
+
+                                <!-- <button class="btn btn-danger">Withdraw Funds</button> -->
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <footer class="bg-info h-20 w-full fixed bottom-0 left-0 right-0 shadow-xl mt-4" style="border-top-left-radius: 30px; border-top-right-radius: 30px; background-color:#4bb5be;">
+        <nav class="text-gray-700 h-full w-full flex justify-between items-center font-medium">
+
+            <a href="/dashboard" class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal " style="border-top-left-radius: 30px;">
+
+                <img src="{{ asset('static/home.png') }}" alt="" width="30">
+
+                <span class="text-xxs">Home</span>
+            </a>
+
+            <a href="/product" class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal text-gradient-100 font-semibold">
+
+                <img src="{{ asset('static/product_blue.png') }}" alt="" width="30">
+
+                <span class="text-xxs">Product</span>
+            </a>
+
+            <a href="/withdraw" class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal ">
+
+                <img src="{{ asset('static/money.png') }}" alt="" width="30">
+
+                <span class="text-xxs">Withdraw</span>
+            </a>
+
+            <a href="/profile" class="flex space-y-1 w-full flex-col items-center  px-4 h-full justify-center tracking-normal " style="border-top-right-radius: 30px;">
+
+                <img src="{{ asset('static/user.png') }}" alt="" width="30">
+
+                <span class="text-xxs">Profile</span>
+            </a>
+
+        </nav>
+    </footer>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        const clipboard = new ClipboardJS('.clip')
+        clipboard.on('success', () => {
+            alert('Your referral link has been copied to the clipboard')
+        });
+    </script>
+
+    <script>
+        document.addEventListener('livewire:load', function() {
+            Livewire.on('redirectWithdraw', function() {
+                window.location.href = '/withdraw';
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const withdrawBtn = document.getElementById('withdrawFundsBtn');
+
+            if (withdrawBtn) {
+                withdrawBtn.addEventListener('click', function() {
+                    window.location.href = '/withdraw'; // Replace '/withdraw' with the actual URL of your withdrawal page
+                });
+            }
+        });
+    </script>
+
+oyerindeoluwatosin8
+07025973126
+</div>
+
+<script>
+    feather.replace()
+</script>
+
+@endsection
+
+
+
+fromt stakegain
+
+<!--@php-->
+<!--    $currentUrl = url(str_replace('.php', '', request()->getRequestUri()));-->
+
+<!--    // Check if the current route is the homepage-->
+<!--    if (request()->is('/')) {-->
+<!--        $currentUrl .= '/index';-->
+<!--    }-->
+<!--@endphp-->p
+
+<!--<link rel="canonical" href="{{ $currentUrl }}">-->
+
+
+
+
+<!--<link rel="canonical" href="https://www.stakegains.com<? echo $_SERVER['REQUEST_URI'];?>">-->
+<link rel="canonical" href="https://www.stakegains.com<?php echo str_replace('.php', '', $_SERVER['REQUEST_URI']); ?>">
+
+
+
+@foreach($games as $key => $m)
+                            <tr
+
+@if($title=='Today Games')
+    <td class="green">{{\Carbon\Carbon::parse($m->gametime)->format('H:i')}}</td>
+@else
+    <td class="green">{{\Carbon\Carbon::parse($m->gamedate)->format('d-m')}}</td>
+@endif
+<table class="table table-striped">
+
+                    <tbody>
+                    <!--@if(count($games)<1)-->
+                    <!--    <p class="alert alert-warning" style="color: #000">NO GAME(S) HERE YET, KINDLY CHECK LATER</p>-->
+                    <!--@else-->
+                        @foreach($games as $key=> $m)
+                            <tr
+                               <td class="green">{{$m->league}}</td>
+                                @if($title=='Yesterday Games')
+                                    <td class="green">{{\Carbon\Carbon::parse($m->gametime)->format('H:i')}}</td>
+                                @elseif($title=='Today Games')
+                                <td class="green">{{\Carbon\Carbon::parse($m->gametime)->format('H:i')}}</td>
+                                @else
+                                    <td class="green">{{\Carbon\Carbon::parse($m->gamedate)->format('d-m')}}</td>
+                                @endif
+
+                                <td class="green"> <a href="{{$m->id}}" class="gameview" data-toggle="modal" data-target="#stakeview">{{$m->teamone}} <span class="vs"><b>VS</b></span> {{$m->teamtwo}} </a></td>
+                                <td class="green">{{$m->ft_recommendation}}</td>
+
+                                <td class="red"><a href="#" data-id="{{$m->id}}" data-url="{{route('/gamedetails')}}" class="gameview" data-toggle="modal" data-target="#stakeview"><small>VIEW TIPS</small></a></td>
+                                {{--@if($m->teamonewon!=NULL)--}}
+                                {{--<td class="green">{{$m->teamonescore}}:{{$m->teamtwoscore}}</td>--}}
+                                {{--@endif--}}
+                            </tr>
+                        @endforeach
+                    @endif
+                    </tbody>
+                </table>
+
+
+use Illuminate\Support\Facades\DB;
+use Illuminate\Pagination\Paginator;
+
+public function moreAction($type)
+{
+    $games = [];
+    $title = '';
+    $today = Carbon::today()->format('d-m-Y');
+    $tomorrow = Carbon::today()->addDay(1)->format('d-m-Y');
+    $nextt = Carbon::today()->addDays(2)->format('d-m-Y');
+    $nexttt = Carbon::today()->addDays(3)->format('d-m-Y');
+    $nextttt = Carbon::today()->addDays(4)->format('d-m-Y');
+    $yesterday = Carbon::yesterday()->format('d-m-Y'); // Use Carbon's yesterday method to get yesterday's date
+
+    $ahead = [$today, $tomorrow];
+
+    for ($i = 2; $i <= 29; $i++) {
+        $day = Carbon::today()->addDays($i)->format('d-m-Y');
+        array_push($ahead, $day);
+    }
+
+    if ($type == 'yesterday') {
+        $gamesQuery = Prediction::where('display', '0')
+            ->where('maestro', 'Yes')
+            ->where('gamedate', $yesterday)
+            ->orderBy('id', 'DESC');
+        $title = "Yesterday Games";
+    } elseif ($type == 'today-games') {
+        $gamesQuery = Prediction::where('display', '0')
+            ->where('maestro', 'Yes')
+            ->where('gamedate', $today)
+            ->orderBy('id', 'DESC');
+        $title = "Today Games";
+    } elseif ($type == 'tomorrow') {
+        $gamesQuery = Prediction::where('display', '0')
+            ->where(function($query) use ($yesterday, $today, $tomorrow, $nextt, $nexttt, $nextttt) {
+                $query->where('gamedate', $yesterday)
+                    ->orWhere('gamedate', $today)
+                    ->orWhere('gamedate', $tomorrow)
+                    ->orWhere('gamedate', $nextt)
+                    ->orWhere('gamedate', $nexttt)
+                    ->orWhere('gamedate', $nextttt);
+            })
+            ->where('today_game', 'Yes')
+            ->orderBy('gamedate', 'ASC');
+        $title = 'Tomorrow and Upcoming Predictions';
+    } else {
+        // For other types, query based on league
+        $gamesQuery = Prediction::whereStatus('0')
+            ->whereIn('gamedate', $ahead)
+            ->whereLeague($type)
+            ->orderBy('gamedate', 'ASC');
+        $title = ucwords(strtolower(str_replace('-', ' ', $type))) . " Predictions";
+    }
+
+    $games = $gamesQuery->paginate(10); // Paginate the results with 10 items per page
+
+    return view('more', compact('games', 'title'));
+}
