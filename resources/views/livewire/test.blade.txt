@@ -1477,9 +1477,7 @@ fromt stakegain
                         @foreach($games as $key=> $m)
                             <tr
                                <td class="green">{{$m->league}}</td>
-                                @if($title=='Yesterday Games')
-                                    <td class="green">{{\Carbon\Carbon::parse($m->gametime)->format('H:i')}}</td>
-                                @elseif($title=='Today Games')
+                                @if($title=='Today Games')
                                 <td class="green">{{\Carbon\Carbon::parse($m->gametime)->format('H:i')}}</td>
                                 @else
                                     <td class="green">{{\Carbon\Carbon::parse($m->gamedate)->format('d-m')}}</td>

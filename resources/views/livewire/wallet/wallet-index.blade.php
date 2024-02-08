@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@livewire('wallet-index')
+
 @section('title', 'TwF Ford DASHBOARD')
 
 @section('content')
@@ -21,19 +21,7 @@
                 </tr>
             </thead>
             <tbody>
-                @if($transactions && $transactions->isNotEmpty())
-                {{-- Display transactions --}}
-                @foreach($transactions as $transaction)
-                <tr>
-                    <td>{{ $transaction->created_at->format('Y-m-d H:i:s') }}</td>
-                    <td>{{ $transaction->type }}</td>
-                    <td>${{ number_format($transaction->amount, 2) }}</td>
-                </tr>
-                @endforeach
-                @else
-                {{-- Display a message when there are no transactions --}}
-                <p>No transactions available.</p>
-                @endif
+
             </tbody>
         </table>
     </div>
