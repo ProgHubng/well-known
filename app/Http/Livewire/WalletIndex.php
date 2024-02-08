@@ -33,7 +33,7 @@ class WalletIndex extends Component
     }
     public function render()
     {
-        dd($this->transactions);
+        // dd($this->transactions);
         return view('livewire.wallet.wallet-index', [
             'wallet' => $this->wallet,
             'transactions' => $this->transactions,
