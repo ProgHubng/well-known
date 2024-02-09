@@ -29,7 +29,7 @@ class Storeuser extends Component
         $user->my_refer_code = random_int(100, 9999999);
         $user->referral = $referred_by;
 
-        $user->balance += 100;  //welcome bonus
+        $user->wallet->balance += 100;  //welcome bonus
         $user->earn += 100; //total income
         $result = $user->save();
 
@@ -37,27 +37,8 @@ class Storeuser extends Component
             if (User::where('my_refer_code', $referred_by)->count() > 0) {
                 $lv_one = User::where('my_refer_code', $referred_by)->first();
                 $auth = User::where('phone_number', $this->phone_number)->first();
-                $auth->level1_referral_id = $lv_one->id;
-                $result = $auth->save();
-
-                if ($result) {
-                    if (User::where('my_refer_code', $lv_one->referral)->count() > 0) {
-                        $lv_two = User::where('my_refer_code', $lv_one->referral)->first();
-                        $auth = User::where('phone_number', $this->phone_number)->first();
-                        $auth->level2_referral_id = $lv_two->id;
-                        $result = $auth->save();
-
-                        if ($result) {
-                            if (User::where('my_refer_code', $lv_two->referral)->count() > 0) {
-                                $lv_three = User::where('my_refer_code', $lv_two->referral)->first();
-                                $auth = User::where('phone_number', $this->phone_number)->first();
-                                $auth->level3_referral_id = $lv_three->id;
-                                $result = $auth->save();
-                            }
-                        }
-                    }
-                }
-
+                $auth->referral_id = $lv_one->id;
+                $result = $auth->save();               
             }
         }
 

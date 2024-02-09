@@ -1556,3 +1556,105 @@ public function moreAction($type)
 
     return view('more', compact('games', 'title'));
 }
+
+
+
+STZKEGIAN NEW ON FRIDAY
+// public function moreAction($type)
+// {
+//     $games = [];
+//     $title = '';
+//     $today = Carbon::today()->format('d-m-Y');
+//     $tomorrow = Carbon::today()->addDay(1)->format('d-m-Y');
+//     $nextt = Carbon::today()->addDays(2)->format('d-m-Y');
+//     $nexttt = Carbon::today()->addDays(3)->format('d-m-Y');
+//     $nextttt = Carbon::today()->addDays(4)->format('d-m-Y');
+//     $yesterday = Carbon::yesterday()->format('d-m-Y');
+//         $pre1 = Carbon::yesterday()->subDays(1)->format('d-m-Y');
+//     $pre2 = Carbon::yesterday()->subDays(2)->format('d-m-Y');
+//     $pre3 = Carbon::yesterday()->subDays(3)->format('d-m-Y');
+//     $pre4 = Carbon::yesterday()->subDays(4)->format('d-m-Y');
+
+
+//     $ahead = [$today, $tomorrow];
+
+//     for ($i = 2; $i <= 29; $i++) {
+//         $day = Carbon::today()->addDays($i)->format('d-m-Y');
+//         array_push($ahead, $day);
+//     }
+
+//     if ($type == 'previous') {
+//         $games = Prediction::where('display', '0')
+//             ->where('maestro', 'Yes')
+//             ->whereIn('gamedate', [$yesterday, $pre1, $pre2, $pre3, $pre4])
+//             ->orderBy('id', 'DESC')
+//             ->paginate(10);
+//         $title = "Previous Games";
+//     } elseif ($type == 'today-games') {
+//         $games = Prediction::where('display', '0')
+//             ->where('maestro', 'Yes')
+//             ->where('gamedate', $today)
+//             ->orderBy('id', 'DESC')
+//             ->paginate(3);
+//         $title = "Today Games";
+//     } elseif ($type == 'tomorrow') {
+//         $games = Prediction::where('display', '0')
+//             ->where(function($query) use ($yesterday, $today, $tomorrow, $nextt, $nexttt, $nextttt) {
+//                 $query->where('gamedate', $yesterday)
+//                     ->orWhere('gamedate', $today)
+//                     ->orWhere('gamedate', $tomorrow)
+//                     ->orWhere('gamedate', $nextt)
+//                     ->orWhere('gamedate', $nexttt)
+//                     ->orWhere('gamedate', $nextttt);
+//             })
+//             ->where('today_game', 'Yes')
+//             ->orderBy('gamedate', 'ASC')
+//             ->paginate(10);
+//         $title = 'Tomorrow and Upcoming Predictions';
+//     } elseif ($type=='epl'){
+//             $games = Prediction::whereStatus('0')->whereIn('gamedate', $ahead)->whereLeague($type)->orderBy('gamedate', 'ASC')->paginate(4);
+//             $title = "England Premier League Predictions";
+
+
+// $title = "England Premier League Predictions";
+//     }
+//     elseif ($type=='spain')
+//     {
+//         $games = Prediction::whereStatus('0')->whereIn('gamedate', $ahead)->whereLeague('spa')->orderBy('gamedate', 'ASC')->paginate(4);
+//         $title = "Spanish La Liga Predictions";
+//     }
+//     elseif ($type=='italy')
+//     {
+//         $games = Prediction::whereStatus('0')->whereIn('gamedate', $ahead)->whereLeague('ita')->orderBy('gamedate', 'ASC')->paginate(4);
+//         $title = "Italian Serie A Predictions";
+//     }
+//     elseif ($type=='france')
+//     {
+//         $games = Prediction::whereStatus('0')->whereIn('gamedate', $ahead)->whereLeague('fra')->orderBy('gamedate', 'ASC')->paginate(4);
+//         $title = "France Ligue 1 Predictions";
+//     }
+//     elseif ($type=='netherlands')
+//     {
+//         $games = Prediction::whereStatus('0')->whereIn('gamedate', $ahead)->whereLeague('ned')->orderBy('gamedate', 'ASC')->paginate(4);
+//         $title = "Netherlands Eredivisie Prediction";
+//     }
+//     elseif ($type=='germany')
+//     {
+//         $games = Prediction::whereStatus('0')->whereIn('gamedate', $ahead)->whereLeague('ger')->orderBy('gamedate', 'ASC')->paginate(4);
+//         $title = "Germany Bundesliga Predictions";
+//     }
+//     elseif ($type=='wc')
+//     {
+//         $games = Prediction::whereStatus('0')->whereIn('gamedate', $ahead)->whereLeague('WORLD CUP 2022')->orderBy('gamedate', 'ASC')->paginate(4);
+//         $title = "World Cup 2022";
+//     } else {
+//     $games = Prediction::whereStatus('0')
+//         ->whereIn('gamedate', $ahead)
+//         ->whereLeague($type)
+//         ->orderBy('gamedate', 'ASC')
+//         ->paginate(10);
+//     $title = ucwords(strtolower(str_replace('-', ' ', $type))) . " Predictions";
+//     }
+
+//     return view('more', compact('games', 'title'));
+// }

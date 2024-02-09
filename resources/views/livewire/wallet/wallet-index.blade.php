@@ -3,6 +3,7 @@
 
 @section('title', 'TwF Ford DASHBOARD')
 
+@livewire('wallet-index')
 @section('content')
 <div class="card mt-4">
     <div class="card-header rounded-full">
@@ -21,6 +22,15 @@
                 </tr>
             </thead>
             <tbody>
+                @if($transactions->isNotEmpty())
+                {{-- Display transactions --}}
+                @foreach($transactions as $transaction)
+                {{-- Your transaction display logic --}}
+                @endforeach
+                @else
+                {{-- Display a message when there are no transactions --}}
+                <p>No transactions available.</p>
+                @endif
 
             </tbody>
         </table>

@@ -35,18 +35,18 @@ class AdminController extends Controller
 
         if ($user) {
 
-            if ($user->level1_referral_id != NULL) {
-                $lvone = User::where('id', $user->level1_referral_id)->first();
+            if ($user->referral_id != NULL) {
+                $lvone = User::where('id', $user->referral_id)->first();
 
                 if ($lvone) {
                     $bonus = 30/100*$amount;
-                    $lvone->balance += $bonus;
+                    $lvone->wallet->balance += $bonus;
                     $lvone->save();
 
                     $ref_bonus = new Referral_bonus;
                     $ref_bonus->user_id = $user->id;
-                    $ref_bonus->referral_user_id = $user->level1_referral_id;
-                    $ref_bonus->level = 1;
+                    $ref_bonus->referral_user_id = $user->referral_id;
+                    //$ref_bonus->level = 1;
                     $ref_bonus->recharged_amount = $amount;
                     $ref_bonus->level_percentage = 30;
                     $ref_bonus->bonus_amount = $bonus;
@@ -55,45 +55,45 @@ class AdminController extends Controller
 
             }
 
-            if ($user->level2_referral_id != NULL) {
-                $lvone = User::where('id', $user->level2_referral_id)->first();
+            // if ($user->level2_referral_id != NULL) {
+            //     $lvone = User::where('id', $user->level2_referral_id)->first();
 
-                if ($lvone) {
-                    $bonus = 1/100*$amount;
-                    $lvone->balance += $bonus;
-                    $lvone->save();
+            //     if ($lvone) {
+            //         $bonus = 1/100*$amount;
+            //         $lvone->balance += $bonus;
+            //         $lvone->save();
 
-                    $ref_bonus = new Referral_bonus;
-                    $ref_bonus->user_id = $user->id;
-                    $ref_bonus->referral_user_id = $user->level1_referral_id;
-                    $ref_bonus->level = 2;
-                    $ref_bonus->recharged_amount = $amount;
-                    $ref_bonus->level_percentage = 1;
-                    $ref_bonus->bonus_amount = $bonus;
-                    $ref_bonus->save();
-                }
+            //         $ref_bonus = new Referral_bonus;
+            //         $ref_bonus->user_id = $user->id;
+            //         $ref_bonus->referral_user_id = $user->level1_referral_id;
+            //         $ref_bonus->level = 2;
+            //         $ref_bonus->recharged_amount = $amount;
+            //         $ref_bonus->level_percentage = 1;
+            //         $ref_bonus->bonus_amount = $bonus;
+            //         $ref_bonus->save();
+            //     }
 
-            }
+            // }
 
-            if ($user->level3_referral_id != NULL) {
-                $lvone = User::where('id', $user->level3_referral_id)->first();
+            // if ($user->level3_referral_id != NULL) {
+            //     $lvone = User::where('id', $user->level3_referral_id)->first();
 
-                if ($lvone) {
-                    $bonus = 1/100*$amount;
-                    $lvone->balance += $bonus;
-                    $lvone->save();
+            //     if ($lvone) {
+            //         $bonus = 1/100*$amount;
+            //         $lvone->balance += $bonus;
+            //         $lvone->save();
 
-                    $ref_bonus = new Referral_bonus;
-                    $ref_bonus->user_id = $user->id;
-                    $ref_bonus->referral_user_id = $user->level1_referral_id;
-                    $ref_bonus->level = 3;
-                    $ref_bonus->recharged_amount = $amount;
-                    $ref_bonus->level_percentage = 1;
-                    $ref_bonus->bonus_amount = $bonus;
-                    $ref_bonus->save();
-                }
+            //         $ref_bonus = new Referral_bonus;
+            //         $ref_bonus->user_id = $user->id;
+            //         $ref_bonus->referral_user_id = $user->level1_referral_id;
+            //         $ref_bonus->level = 3;
+            //         $ref_bonus->recharged_amount = $amount;
+            //         $ref_bonus->level_percentage = 1;
+            //         $ref_bonus->bonus_amount = $bonus;
+            //         $ref_bonus->save();
+            //     }
 
-            }
+            // }
 
 
         }
